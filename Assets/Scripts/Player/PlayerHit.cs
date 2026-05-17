@@ -6,6 +6,7 @@ public class PlayerHit : MonoBehaviour
 {   
     public Player player;
     public int hitCount;
+    public bool canHit;
     public BoxCollider leftHandHitBox;
     public BoxCollider rightHandHitBox;
 
@@ -47,7 +48,8 @@ public class PlayerHit : MonoBehaviour
 
     public void TakeHit(bool hitFromRight)
     {
-        StartCoroutine(HitCoroutine(hitFromRight));
+        if (canHit) { StartCoroutine(HitCoroutine(hitFromRight)); }
+        
     }
 
     IEnumerator HitCoroutine(bool hitFromRight)

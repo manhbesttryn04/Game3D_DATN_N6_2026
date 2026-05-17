@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public void Update()
     {
         Attack();
+        Block();
     }
     public void Attack()
     {
@@ -29,6 +30,28 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
                 HandleAttackInput();
         }
+    }
+    public void Block()
+    {
+        if (!player.playerType.isPlayer2)
+        {
+            if (Input.GetKey(KeyCode.S))
+            {
+                HandelBlock(true);
+            } else HandelBlock(false);
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                HandelBlock(true);
+            }else HandelBlock(false);
+        }
+    }
+    void HandelBlock(bool value)
+    {
+        player.playerAnimator.playerAni.SetBool("Block", value);
+        player.playerHit.canHit = value;
     }
 
     void HandleAttackInput()
