@@ -48,9 +48,14 @@ public class PlayerHit : MonoBehaviour
 
     public void TakeHit(bool hitFromRight)
     {
-        if (canHit) { StartCoroutine(HitCoroutine(hitFromRight)); }
+        if (!canHit)
+        {
+            StartCoroutine(HitCoroutine(hitFromRight));
+        }
+        else player.playerAttack.BlockHit();
         
     }
+    
 
     IEnumerator HitCoroutine(bool hitFromRight)
     {

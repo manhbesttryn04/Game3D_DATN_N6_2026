@@ -48,6 +48,10 @@ public class PlayerAttack : MonoBehaviour
             }else HandelBlock(false);
         }
     }
+    public void BlockHit()
+    {
+        player.playerAnimator.playerAni.SetTrigger("BlockHit");
+    }
     void HandelBlock(bool value)
     {
         player.playerAnimator.playerAni.SetBool("Block", value);
