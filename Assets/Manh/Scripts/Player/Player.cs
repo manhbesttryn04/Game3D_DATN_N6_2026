@@ -8,4 +8,6 @@ public class Player : MonoBehaviour
     public PlayerAttack playerAttack;
     public PlayerHit playerHit; 
     public PlayerAnimator playerAnimator;
+    public PlayerDebuff playerDebuff;
+    public PlayerBuff playerBuff;
 }

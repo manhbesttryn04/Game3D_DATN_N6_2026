@@ -702,7 +702,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.21309982
+      - time: 0.46533197
         functionName: DisableLeftHand
         data: 
         objectReferenceParameter: {instanceID: 0}

@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public int attackComboCount = 0;
     public bool canCombo;
     public bool canAttack = true;
+    public bool hasKnock = false;
     Coroutine comboCoroutine;
 
 
@@ -55,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
     void HandelBlock(bool value)
     {
         player.playerAnimator.playerAni.SetBool("Block", value);
-        player.playerHit.canHit = value;
+        player.playerDebuff.canHit = value;
     }
 
     void HandleAttackInput()
@@ -83,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
 
         player.playerAnimator.playerAni.SetTrigger("Attack1");
 
-        DashForward();
+       player.playerBuff.DashForward(0.4f);
 
         StartComboWindow();
     }
@@ -149,9 +150,5 @@ public class PlayerAttack : MonoBehaviour
         canAttack = true;
     }
 
-    void DashForward()
-    {
-        Vector3 dir = player.playerLook.      yRotationRight ? Vector3.right : Vector3.left;
-        player.playerMove.controller.Move(dir * 0.5f);
-    }
+   
 }

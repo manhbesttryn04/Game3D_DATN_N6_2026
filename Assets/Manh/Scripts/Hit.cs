@@ -2,7 +2,7 @@
 
 public class HitBox : MonoBehaviour
 {
-    public PlayerHit owner;
+    public PlayerDebuff owner;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -11,7 +11,7 @@ public class HitBox : MonoBehaviour
 
         if (other.CompareTag("Player2"))
         {
-          PlayerHit p = other.GetComponent<PlayerHit>();
+            PlayerDebuff p = other.GetComponent<PlayerDebuff>();
             if (p.player.playerLook.yRotationRight)
             {
                 p.TakeHit(true);

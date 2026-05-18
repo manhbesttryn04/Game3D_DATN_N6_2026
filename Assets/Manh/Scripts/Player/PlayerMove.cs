@@ -37,9 +37,12 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
 
-
-        Move();
-        Jump();
+        if (!player.playerAttack.hasKnock)
+        {
+            Move();
+            Jump();
+        }
+       
         ApplyGravity();
     }
 

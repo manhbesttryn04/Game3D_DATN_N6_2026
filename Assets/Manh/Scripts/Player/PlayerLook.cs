@@ -7,14 +7,17 @@ public class PlayerLook : MonoBehaviour
     public Player player;
     public bool yRotationRight = true;
     public float lockXPosition;
+    public bool canRotate;
     void Start()
     {
         lockXPosition = transform.position.z;
     }
      void Update()
     {
-        LookToPlayer();
-        RotatePlayer();
+        if (canRotate) {
+            LookToPlayer();
+            RotatePlayer();
+        }
     }
     void LateUpdate()
     {
