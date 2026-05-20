@@ -9,7 +9,7 @@ public class HitBox : MonoBehaviour
         if (other.gameObject == owner.gameObject)
             return;
 
-        if (other.CompareTag("Player2"))
+        if (other.CompareTag("Player2")|| other.CompareTag("Player1"))
         {
             PlayerDebuff p = other.GetComponent<PlayerDebuff>();
             if (p.player.playerLook.yRotationRight)

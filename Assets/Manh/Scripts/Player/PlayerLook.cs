@@ -12,9 +12,10 @@ public class PlayerLook : MonoBehaviour
     {
         lockXPosition = transform.position.z;
     }
-     void Update()
+    void Update()
     {
-        if (canRotate) {
+        if (canRotate)
+        {
             LookToPlayer();
             RotatePlayer();
         }

@@ -1,12 +1,23 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.InputSystem.XR;
+﻿using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
-{   
+{
+    // =========================
+    // REFERENCES
+    // =========================
+
     public Player player;
+
+    // =========================
+    // HITBOXES
+    // =========================
+
     public BoxCollider leftHandHitBox;
     public BoxCollider rightHandHitBox;
+
+    // =========================
+    // UNITY METHODS
+    // =========================
 
     void Start()
     {
@@ -14,9 +25,9 @@ public class PlayerHit : MonoBehaviour
         rightHandHitBox.enabled = false;
     }
 
-    // =====================
-    // ATTACK 1
-    // =====================
+    // =========================
+    // LEFT HAND
+    // =========================
 
     public void EnableLeftHand()
     {
@@ -28,9 +39,9 @@ public class PlayerHit : MonoBehaviour
         rightHandHitBox.enabled = false;
     }
 
-    // =====================
-    // ATTACK 2
-    // =====================
+    // =========================
+    // BOTH HANDS
+    // =========================
 
     public void EnableBothHands()
     {
@@ -43,6 +54,4 @@ public class PlayerHit : MonoBehaviour
         leftHandHitBox.enabled = false;
         rightHandHitBox.enabled = false;
     }
-
-   
 }
