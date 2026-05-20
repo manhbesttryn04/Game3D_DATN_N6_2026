@@ -274,7 +274,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   serializedVersion: 2
-  m_Quality: 0
+  m_Quality: 4
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 3835416179558036091, guid: d430226b0eea5e745876d4c4f4547cf5, type: 3}
@@ -842,8 +842,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7068779, y: 0.12231304, z: 0.22326197}
-  m_Center: {x: 0.14656119, y: 0.012297217, z: -0.0025061264}
+  m_Size: {x: 0.25662825, y: 0.09212177, z: 0.22326197}
+  m_Center: {x: -0.10229164, y: 0.027392805, z: -0.0025062065}
 --- !u!114 &3570307018750128121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7da105f6d3efa34da65186b37c41bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hit
-  owner: {fileID: 120248762762943939}
+  owner: {fileID: 564788283759257633}
 --- !u!1 &3805370043024638051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,8 +1484,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.72645247, y: 0.15466858, z: 0.13119379}
-  m_Center: {x: -0.13677388, y: -0.030337848, z: -0.007658959}
+  m_Size: {x: 0.25869727, y: 0.10405481, z: 0.13119379}
+  m_Center: {x: 0.09710398, y: -0.034764063, z: -0.0076590474}
 --- !u!114 &8278723389224097783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7da105f6d3efa34da65186b37c41bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hit
-  owner: {fileID: 120248762762943939}
+  owner: {fileID: 564788283759257633}
 --- !u!1 &6241394106016587269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1581,8 @@ GameObject:
   - component: {fileID: 2273685293773353983}
   - component: {fileID: 120248762762943939}
   - component: {fileID: 2617681877071965362}
+  - component: {fileID: 564788283759257633}
+  - component: {fileID: 2929986910304216959}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player1
@@ -1646,7 +1648,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.28
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
@@ -1670,6 +1672,8 @@ MonoBehaviour:
   playerAttack: {fileID: 2273685293773353983}
   playerHit: {fileID: 120248762762943939}
   playerAnimator: {fileID: 2617681877071965362}
+  playerDebuff: {fileID: 564788283759257633}
+  playerBuff: {fileID: 2929986910304216959}
 --- !u!114 &4620080421577694970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1684,6 +1688,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerType
   player: {fileID: 8798555853502692955}
   isPlayer2: 0
+  isLowWeight: 1
+  isHighWeight: 0
 --- !u!114 &7397793403729560463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1699,11 +1705,13 @@ MonoBehaviour:
   controller: {fileID: 7932761661888735331}
   player: {fileID: 8798555853502692955}
   speed: 5
+  startSpeed: 0
   jumpHeight: 5
   gravity: -9.81
   isMove: 1
   isTurning: 0
   isGround: 0
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6998963562462807383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,6 +1727,7 @@ MonoBehaviour:
   player: {fileID: 8798555853502692955}
   yRotationRight: 1
   lockXPosition: 0
+  canRotate: 1
 --- !u!114 &2273685293773353983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,10 +1742,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   player: {fileID: 8798555853502692955}
   isAttacking: 0
-  hitCount: 0
-  attackComboCount: 0
   canCombo: 0
   canAttack: 1
+  hasKnock: 0
+  hitCount: 0
+  attackComboCount: 0
 --- !u!114 &120248762762943939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,7 +1760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHit
   player: {fileID: 8798555853502692955}
-  hitCount: 0
   leftHandHitBox: {fileID: 7741869941258968918}
   rightHandHitBox: {fileID: 572799350962985406}
 --- !u!114 &2617681877071965362
@@ -1766,6 +1775,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
   playerAni: {fileID: 7643750400524923126}
+--- !u!114 &564788283759257633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626625467837676450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd570626e0882b46a8ae4485d8a584a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDebuff
+  player: {fileID: 8798555853502692955}
+  hitCount: 0
+  canHit: 0
+  meshes:
+  - {fileID: 1363381087655624719}
+--- !u!114 &2929986910304216959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626625467837676450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f845b03d6cc40ee42af34c0931b351d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  player: {fileID: 8798555853502692955}
+  isDash: 0
+  canDash: 1
 --- !u!1 &6687016676916178604
 GameObject:
   m_ObjectHideFlags: 0
