@@ -411,8 +411,8 @@ MonoBehaviour:
   objectLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  lowestSubdivLevelOverride: 0
-  highestSubdivLevelOverride: 0
+  lowestSubdivLevelOverride: 1
+  highestSubdivLevelOverride: 2
   overridesSubdivLevels: 1
   mightNeedRebaking: 0
   cachedTransform:
@@ -432,7 +432,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  cachedHashCode: 13120874
+  cachedHashCode: 13145737
   fillEmptySpaces: 1
   version: 2
   globalVolume: 0
