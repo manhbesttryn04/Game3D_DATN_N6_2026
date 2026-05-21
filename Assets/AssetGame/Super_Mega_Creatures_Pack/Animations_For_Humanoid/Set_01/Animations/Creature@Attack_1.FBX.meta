@@ -695,7 +695,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.19400394
+      - time: 0.19869877
         functionName: EnableLeftHand
         data: 
         objectReferenceParameter: {instanceID: 0}

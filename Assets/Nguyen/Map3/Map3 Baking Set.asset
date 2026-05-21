@@ -31,8 +31,7 @@ MonoBehaviour:
       collisionMask:
         serializedVersion: 2
         m_Bits: 4294967291
-  m_SceneGUIDs:
-  - f43db242119f7f84688aa9aefb01329b
+  m_SceneGUIDs: []
   obsoleteScenesToNotBake: []
   m_LightingScenarios:
   - Default
@@ -771,11 +770,5 @@ MonoBehaviour:
   useRenderingLayers: 0
   renderingLayerMasks: []
   m_SceneBakeData:
-    m_Keys:
-    - f43db242119f7f84688aa9aefb01329b
-    m_Values:
-    - hasProbeVolume: 1
-      bakeScene: 1
-      bounds:
-        m_Center: {x: 81, y: 40.5, z: 0}
-        m_Extent: {x: 162, y: 121.5, z: 81}
+    m_Keys: []
+    m_Values: []

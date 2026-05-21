@@ -247,7 +247,7 @@ SkinnedMeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3d65a80d617eb7d428bab9196c436f7a, type: 2}
@@ -274,7 +274,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   serializedVersion: 2
-  m_Quality: 4
+  m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 3835416179558036091, guid: d430226b0eea5e745876d4c4f4547cf5, type: 3}
@@ -1583,6 +1583,7 @@ GameObject:
   - component: {fileID: 2617681877071965362}
   - component: {fileID: 564788283759257633}
   - component: {fileID: 2929986910304216959}
+  - component: {fileID: 4082121863651936083}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player1
@@ -1653,7 +1654,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &8798555853502692955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,6 +1808,22 @@ MonoBehaviour:
   player: {fileID: 8798555853502692955}
   isDash: 0
   canDash: 1
+--- !u!114 &4082121863651936083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626625467837676450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606bb6a1bc4e2674ca20da0d4df2e65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  player: {fileID: 8798555853502692955}
+  maxHealth: 100
+  currentHealth: 0
+  isDead: 0
 --- !u!1 &6687016676916178604
 GameObject:
   m_ObjectHideFlags: 0
